@@ -1,24 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="联慧科技, 门户网站, 网站开发, 企业建站, java, 人工智能, 机器学习">
-    <meta name="description" content="联慧科技是提供软件开发服务的高科技公司">
-    <meta name="Robots" content="all">
-    <title>联慧科技</title>
+    <meta charset="utf-8">
+    <title>Bootstrap 实例 - 默认的导航栏</title>
+    <link rel="stylesheet" href="plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <script src="plugins/jquery/jquery-3.3.1.min.js"></script>
+    <script src="plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <style>
-        * {
-            padding: 0px;
-            margin: 0px;
-
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: #ffffff;
+        }
+        #carousel{
+            flex: 1;
+            background: #2aabd2;
+        }
+        header,footer{
+            flex: 1;
+            padding-left: 100px;
+            padding-right: 100px;
+            display: flex;
+            background-clip: content-box;
 
         }
-    </style>
+        #logo{
+            justify-content: flex-start;
+            flex: 1;
+            height: 100%;
+        }
+        #langAndMap{
+            justify-content: flex-end;
+            display: flex;
+        }
+        #langAndMap>ul{
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+        li{
+            list-style: none;
+        }
+        #langAndMap>li:last-child{
+            border-right: 5px solid deepskyblue;
+        }
+        main{
+            padding-left: 100px;
+            padding-right: 100px;
+            display: flex;
+            background-clip: content-box;
+            flex: 4;
+            background: turquoise;
+        }
 
+
+    </style>
 </head>
 <body>
+<header>
+    <div id="logo">
+        <img src="img/logo.jpg"/>
+    </div>
+    <div id="langAndMap">
+        <ul>
+            <li><a>English</a></li>
+            <li><a>繁体</a></li>
+            <li><a>网站地图</a></li>
+        </ul>
+    </div>
+</header>
+<div id="carousel">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">菜鸟教程</a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">iOS</a></li>
+                    <li><a href="#">SVN</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Java
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">jmeter</a></li>
+                            <li><a href="#">EJB</a></li>
+                            <li><a href="#">Jasper Report</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">分离的链接</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">另一个分离的链接</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="carouselImg"></div>
+</div>
+<main></main>
+<footer></footer>
 
 </body>
 </html>
