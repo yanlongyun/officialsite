@@ -3,10 +3,15 @@
 <head>
     <meta charset="utf-8">
     <title>Bootstrap 实例 - 默认的导航栏</title>
+    <link rel="stylesheet" href="css/public.css">
     <link rel="stylesheet" href="plugins/bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <script src="plugins/jquery/jquery-3.3.1.min.js"></script>
     <script src="plugins/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <style>
+        .w{
+            padding-left: 100px;
+            padding-right: 100px;
+        }
         *{
             margin: 0;
             padding: 0;
@@ -18,11 +23,10 @@
             background: #ffffff;
         }
         #carousel{
-            flex: 1;
-            background: #2aabd2;
+            display: flex;
+            flex-direction: column;
         }
         header,footer{
-            flex: 1;
             padding-left: 100px;
             padding-right: 100px;
             display: flex;
@@ -35,6 +39,7 @@
             height: 100%;
         }
         #langAndMap{
+            color:#000000;
             justify-content: flex-end;
             display: flex;
         }
@@ -43,22 +48,196 @@
             align-items: center;
             display: flex;
         }
-        li{
+        #langAndMap>ul{
+            display: flex;
+        }
+        #langAndMap>ul>li{
+            margin-right:5px;
+            justify-content: center;
             list-style: none;
         }
-        #langAndMap>li:last-child{
-            border-right: 5px solid deepskyblue;
+        a{
+            text-decoration: none;
+            color: inherit;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+            -webkit-appearance: none;
+            -webkit-text-size-adjust: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            -webkit-touch-callout: none;
+            border-bottom: none;
+        }
+        #langAndMap>ul>li>span{
+            margin-left: 5px;
+        }
+        #langAndMap>ul>li:nth-child(3){
+            border-left: solid 2px #000000;
         }
         main{
+            display: flex;
+            flex-direction: column;
+            background-clip: content-box;
+        }
+        nav{
             padding-left: 100px;
             padding-right: 100px;
+            height:50px;
+            display:flex;
+            background: #2aabd2;
+        }
+        nav>div{
             display: flex;
-            background-clip: content-box;
-            flex: 4;
-            background: turquoise;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+        }
+        .tit1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .news{
+            display: flex;
+            flex-direction: column;
+        }
+        .topNews,.midnews{
+            margin-top:20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .midnews{
+            height: 280px;
+        }
+        .newsCenter{
+            margin-top:20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .newsCenter>div{
+            width: 340px;
+        }
+        .newsCenter>div>ul{
+            width: 340px;
+        }
+        .newsbox{
+            display: flex;
+            flex-direction: column;
+        }
+        .newsbox>div:nth-child(1){
+            display: flex;
+            justify-content: space-between;
+        }
+        div>h4{
+            margin:0px;
+            padding: 0px;
+            border-bottom: solid 5px #F6AB00;
+        }
+        div>h6{
+            flex-grow: 1;
+            margin:0px;
+            padding: 0px;
+            border-bottom: solid 5px #00796A;
+            text-align: end;
+        }
+        div>h4>a{
+            margin:0px;
+            padding: 0px;
+        }
+        .newsbox>ul{
+            margin:5px;
+            display: flex;
+            flex-grow: 1;
+            flex-direction: column;
+        }
+        .newsbox>ul>li{
+            font-size: 14px;
+            display: flex;
+            flex:1;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #NavTop{
+            width:70px;
+            height:270px;
+            left:0px;
+            margin-top:10px;
+            position: absolute;
+            top:680px;
+        }
+        #NavTop #NavCon{
+            width:70px;
+            height:270px;
+            position:relative;
+        }
+        #NavTop #NavCon ul li a{
+            text-decoration:none;
+            color:#fff;
+            height:30px;
+            background:#555;
+            display:block;
+            margin-top:5px;
+            margin-left:5px;
+            line-height:30px;
+            text-align:center;
+            font-family:"微软雅黑";
+            font-size:10px;
+        }
+        #NavTop #NavCon ul li a:hover{
+            background:#cc0066;
+        }
+        p{color:red;}
+        .hideDIV{
+            position: absolute;
+            left:100px;
+            background: #fff;
+            color:#000;
+            float: left;
+            z-index: 88;
+        }
+        .hideNews{
+            display: flex;
+        }
+        .hideNews>ul{
+            flex:1;
+            height: 80px;
+            display: flex;
+            flex-direction: column;
+        }
+        ul,li{
+            border-left: none;
         }
 
-
+        .footer{
+            border-top:20px solid #000;
+        }
+        .footnav{
+            flex:3;
+            display: flex;
+            justify-content: space-between;
+            border-right:solid 2px #adadad;
+        }
+        .footnav>li{
+            margin:0;
+            flex:1;
+            display: flex;
+            flex-direction: column;
+        }
+        .footnav>li>a{
+            flex: 1;
+        }
+        .footdiv{
+            display: flex;
+            margin-top: 20px;
+            justify-content: space-between;
+        }
+        .newspic>img{
+            height: 230px;
+        }
+        .newsCenter>div>ul>li{
+            flex-direction:row-reverse;
+        }
     </style>
 </head>
 <body>
@@ -70,43 +249,699 @@
         <ul>
             <li><a>English</a></li>
             <li><a>繁体</a></li>
-            <li><a>网站地图</a></li>
+            <li><span></span><a>网站地图</a></li>
         </ul>
     </div>
 </header>
-<div id="carousel">
-    <nav class="navbar navbar-default" role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">菜鸟教程</a>
-            </div>
-            <div>
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">iOS</a></li>
-                    <li><a href="#">SVN</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Java
-                            <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">jmeter</a></li>
-                            <li><a href="#">EJB</a></li>
-                            <li><a href="#">Jasper Report</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">分离的链接</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">另一个分离的链接</a></li>
+<div id="NavTop">
+    <div id="NavCon">
+        <ul >
+            <li><a href="#">独家观点</a></li>
+            <li><a href="#">前排明星</a></li>
+            <li><a href="#">秀场细节</a></li>
+            <li><a href="#">场外街拍</a></li>
+            <li><a href="#">秀场快讯</a></li>
+        </ul>
+    </div>
+</div>
+<main >
+    <div id="carousel">
+        <nav >
+            <div><div class="hideDIV" style="display: none">
+                    <div class="hideNews">
+                        <ul>
+                            <li><a>你好是我收的吗</a></li>
+                            <li><a>你好是我收的吗</a></li>
+                            <li><a>你好是我收的吗</a></li>
+                            <li><a>你好是我收的吗</a></li>
                         </ul>
+                        <ul>
+                            <li><a>你好是我收的吗</a></li>
+                            <li><a>你好是我收的吗</a></li>
+                            <li><a>你好是我收的吗</a></li>
+                            <li><a>你好是我收的吗</a></li>
+                        </ul>
+                        <ul>
+                            <li><a>你好是我收的吗</a></li>
+                            <li><a>你好是我收的吗</a></li>
+                            <li><a>你好是我收的吗</a></li>
+                            <li><a>你好是我收的吗</a></li>
+                        </ul>
+                        <ul>
+                            <li><a>你好是我收的吗</a></li>
+                            <li><a>你好是我收的吗</a></li>
+                            <li><a>你好是我收的吗</a></li>
+                            <li><a>你好是我收的吗</a></li>
+                        </ul>
+                    </div>
+                </div><a>首页</a></div>
+            <div><div class="hideDIV" style="display: none">
+                <div class="hideNews">
+                    <li><a>你好是我收的吗</a></li>
+                    <li><a>你好是我收的吗</a></li>
+                    <li><a>你好是我收的吗</a></li>
+                    <li><a>你好是我收的吗</a></li>
+                    <li><a>你好是我收的吗</a></li>
+                    <li><a>你好是我收的吗</a></li>
+                    <li><a>你好是我收的吗</a></li>
+                    <li><a>你好是我收的吗</a></li>
+                    <li><a>你好是我收的吗</a></li>
+                    <li><a>你好是我收的吗</a></li>
+                    <li><a>你好是我收的吗</a></li>
+                    <li><a>你好是我收的吗</a></li>
+                    <li><a>你好是我收的吗</a></li>
+                    <li><a>你好是我收的吗</a></li>
+                    <li><a>你好是我收的吗</a></li>
+                    <li><a>你好是我收的吗</a></li>
+                </div>
+            </div><a>关于我们</a></div>
+            <div><div class="hideDIV" style="display: none">
+                <div class="hideNews">
+                    <ul>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                    </ul>
+                    <ul>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                    </ul>
+                    <ul>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                    </ul>
+                    <ul>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                    </ul>
+                </div>
+            </div><a>新闻中心</a></div>
+            <div><div class="hideDIV" style="display: none">
+                <div class="hideNews">
+                    <ul>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                    </ul>
+                    <ul>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                    </ul>
+                    <ul>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                    </ul>
+                    <ul>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                    </ul>
+                </div>
+            </div><a>社会责任</a></div>
+            <div><div class="hideDIV" style="display: none">
+                <div class="hideNews">
+                    <ul>
+                        <li><a>你好收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                    </ul>
+                    <ul>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                    </ul>
+                    <ul>
+                        <li><a>你好是的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是的吗</a></li>
+                    </ul>
+                    <ul>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是的吗</a></li>
+                        <li><a>你好收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                    </ul>
+                </div>
+            </div><a>业务领域</a></div>
+            <div><<div class="hideDIV" style="display: none">
+                <div class="hideNews">
+                    <ul>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                    </ul>
+                    <ul>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                    </ul>
+                    <ul>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                    </ul>
+                    <ul>
+                        <li><a>你好吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                    </ul>
+                </div>
+            </div><a>科技创新</a></div>
+            <div><div class="hideDIV" style="display: none">
+                <div class="hideNews">
+                    <ul>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                    </ul>
+                    <ul>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                    </ul>
+                    <ul>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                    </ul>
+                    <ul>
+                        <li><a>你好的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                    </ul>
+                </div>
+            </div><a>党的建设</a></div>
+            <div><div class="hideDIV" style="display: none">
+                <div class="hideNews">
+                    <ul>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                    </ul>
+                    <ul>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                    </ul>
+                    <ul>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                    </ul>
+                    <ul>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                        <li><a>你好是我收的吗</a></li>
+                    </ul>
+                </div>
+            </div><a>在线服务</a></div>
+        </nav>
+        <div id="BigCarousel" class="carousel slide" data-ride="carousel">
+            <!-- 轮播（Carousel）指标 -->
+            <ol class="carousel-indicators">
+                <li data-target="#BigCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#BigCarousel" data-slide-to="1"></li>
+                <li data-target="#BigCarousel" data-slide-to="2"></li>
+            </ol>
+            <!-- 轮播（Carousel）项目 -->
+            <div class="carousel-inner">
+
+                <div class="item active">
+                    <img src="img/2.jpg" alt="First slide">
+                </div>
+                <div class="item">
+                    <img src="img/2.jpg" alt="Second slide">
+                </div>
+                <div class="item">
+                    <img src="img/2.jpg" alt="Third slide">                                                                                                                                                                                                                                                .........
+
+                </div>
+            </div>
+            <!-- 轮播（Carousel）导航 -->
+            <a class="left carousel-control" href="#BigCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#BigCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <div class="news w">
+        <div class="headline ">
+            <div class="tit1">
+                <a><h3>为建设具有高科技水平的互联网企业而奋斗</h3></a>
+            </div>
+        </div>
+        <div class="topNews">
+            <div id="SmallCarousel" class="carousel slide" data-ride="carousel">
+                <!-- 轮播（Carousel）指标 -->
+                <ol class="carousel-indicators">
+                    <li data-target="#SmallCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#SmallCarousel" data-slide-to="1"></li>
+                    <li data-target="#SmallCarousel" data-slide-to="2"></li>
+                </ol>
+                <!-- 轮播（Carousel）项目 -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="img/s1.jpg" alt="First slide">
+                    </div>
+                    <div class="item">
+                        <img src="img/s1.jpg" alt="Second slide">
+                    </div>
+                    <div class="item">
+                        <img src="img/s1.jpg" alt="Third slide">                                                                                                                                                                                                                                                .........
+
+                    </div>
+                </div>
+                <!-- 轮播（Carousel）导航 -->
+                <a class="left carousel-control" href="#SmallCarousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#SmallCarousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <div class="newsbox fr">
+                <div>
+                    <h4>
+                        <a>要闻</a>
+                        <a>综合新闻</a>
+                    </h4>
+                    <h6>更多>></h6>
+                </div>
+                <ul>
+                    <li>
+                        <a>公司向广大境外员工致慰问信</a>
+                        <span>2020-09-30</span>
+                    </li>
+                    <li>
+                        <a>国家电网公司48项成果荣获2020年全国电力行业优秀QC成果特等奖</a>
+                        <span>2020-09-30</span>
+                    </li>
+                    <li>
+                        <a> 北京电力医院赴青海玛多县开展医疗巡诊活动</a>
+                        <span>2020-09-30</span>
+                    </li>
+                    <li>
+                        <a>2020年“一带一路”国家和地区电力能源高管人才发展计划研讨班</a>
+                        <span>2020-09-30</span>
+                    </li>
+                    <li>
+                        <a> 江苏有人居住海岛实现供电全覆盖</a>
+                        <span>2020-09-30</span>
+                    </li>
+                    <li>
+                        <a>中国公共充电桩数量居全球首位</a>
+                        <span>2020-09-30</span>
+                    </li>
+                    <li>
+                        <a>湖北恩施筑牢抗洪“光明防线</a>
+                        <span>2020-09-30</span>
+                    </li>
+                    <li>
+                        <a> 江苏有人居住海岛实现供电全覆盖</a>
+                        <span>2020-09-30</span>
+                    </li>
+                    <li>
+                        <a>湖北恩施筑牢抗洪“光明防线</a>
+                        <span>2020-09-30</span>
+                    </li>
+                    <li>
+                        <a> 江苏有人居住海岛实现供电全覆盖</a>
+                        <span>2020-09-30</span>
+                    </li>
+                    <li>
+                        <a>湖北恩施筑牢抗洪“光明防线</a>
+                        <span>2020-09-30</span>
+                    </li>
+                    <li>
+                        <a> 江苏有人居住海岛实现供电全覆盖</a>
+                        <span>2020-09-30</span>
                     </li>
                 </ul>
             </div>
         </div>
-    </nav>
-    <div id="carouselImg"></div>
-</div>
-<main></main>
-<footer></footer>
+        <div class="midnews ">
+            <div class="newsbox fr">
+                <div>
+                    <h4>
+                        <a>要闻</a>
+                        <a>综合新闻</a>
+                    </h4>
+                    <h6>更多>></h6>
+                </div>
+                <ul>
+                    <li>
+                        <a>公司向广大境外员工致慰问信</a>
+                        <span>2020-09-30</span>
+                    </li>
+                    <li>
+                        <a>国家电网公司48项成果荣获2020年全国电力行业优秀QC成果特等奖</a>
+                        <span>2020-09-30</span>
+                    </li>
+                    <li>
+                        <a> 北京电力医院赴青海玛多县开展医疗巡诊活动</a>
+                        <span>2020-09-30</span>
+                    </li>
+                    <li>
+                        <a>2020年“一带一路”国家和地区电力能源高管人才发展计划研讨班</a>
+                        <span>2020-09-30</span>
+                    </li>
+                    <li>
+                        <a> 江苏有人居住海岛实现供电全覆盖</a>
+                        <span>2020-09-30</span>
+                    </li>
+                    <li>
+                        <a>中国公共充电桩数量居全球首位</a>
+                        <span>2020-09-30</span>
+                    </li>
+                    <li>
+                        <a>湖北恩施筑牢抗洪“光明防线</a>
+                        <span>2020-09-30</span>
+                    </li>
+                    <li>
+                        <a> 江苏有人居住海岛实现供电全覆盖</a>
+                        <span>2020-09-30</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="newsbox fr">
+                <div>
+                    <h4>
+                        <a>要闻</a>
+                        <a>综合新闻</a>
+                    </h4>
+                    <h6>更多>></h6>
+                </div>
+                <ul>
+                    <li>
+                        <a>公司向广大境外员工致慰问信</a>
+                        <span>2020-09-30</span>
+                    </li>
+                    <li>
+                        <a>国家电网公司48项成果荣获2020年全国电力行业优秀QC成果特等奖</a>
+                        <span>2020-09-30</span>
+                    </li>
+                    <li>
+                        <a> 北京电力医院赴青海玛多县开展医疗巡诊活动</a>
+                        <span>2020-09-30</span>
+                    </li>
+                    <li>
+                        <a>2020年“一带一路”国家和地区电力能源高管人才发展计划研讨班</a>
+                        <span>2020-09-30</span>
+                    </li>
+                    <li>
+                        <a> 江苏有人居住海岛实现供电全覆盖</a>
+                        <span>2020-09-30</span>
+                    </li>
+                    <li>
+                        <a>中国公共充电桩数量居全球首位</a>
+                        <span>2020-09-30</span>
+                    </li>
+                    <li>
+                        <a>湖北恩施筑牢抗洪“光明防线</a>
+                        <span>2020-09-30</span>
+                    </li>
+                    <li>
+                        <a> 江苏有人居住海岛实现供电全覆盖</a>
+                        <span>2020-09-30</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="newsCenter">
+            <div class="newsbox ">
+                <div>
+                    <h4>
+                        媒体聚焦
+                    </h4>
+                    <h6>更多>></h6>
+                </div>
+                <ul >
+                    <a class="newspic"><img src="img/new01.jpg" ></a>
+                    <li>
+                        <i>09/18</i>
+                        <a title="《人民日报海外版》：无人机多机协同 自主巡检" target="_blank"> <font style="">《人民日报海外版》：无人机多机协同 自主巡检</font></a>
+                    </li>
+                    <li>
+                        <i>09/17</i>
+                        <a title="【中央电视台】新闻直播间：智能电网机器人上岗 独立进行带电作业" target="_blank" > <font style="">【中央电视台】新闻直播间：智能电网机器人上岗 业</font></a>
+                    </li>
+                    <li>
+                        <i>09/17</i>
+                        <a title="【中央电视台】新闻直播间：云技术应用 机器人具备自主学习能力" target="_blank" > <font style="">【中央电视台】新闻直播间：云技术应用 </font></a>
+                    </li>
 
+                    <li>
+                        <i>09/17</i>
+                        <a title="【中央电视台】新闻直播间：8省联合举行输电线路防山火观摩演练" target="_blank" > <font style="">【中央电视台】新闻直播间：8省联合举行输电线</font></a>
+                    </li>
+
+                    <li>
+                        <i>09/14</i>
+                        <a title="《人民日报》：与时间竞速，点亮“雷神山”（一线抗疫群英谱）" target="_blank"> <font style="">《人民日报》：与时间竞速，点亮“雷神山</font></a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="newsbox ">
+                <div>
+                    <h4>一线风采</h4>
+                    <h6>更多>></h6>
+                </div>
+                <ul >
+                    <a class="newspic" target="_blank" ><img src="img/new01.jpg" ></a>
+                    <li>
+                        <i>09/18</i>
+                        <a  title="《人民日报海外版》：无人机多机协同 自主巡检" target="_blank"> <font style="">《人民日报海外版》：无人机多机协同 自主巡检</font></a>
+                    </li>
+
+                    <li>
+                        <i>09/17</i>
+                        <a  title="【中央电视台】新闻直播间：智能电网机器人上岗 独立进行带电作业" target="_blank" > <font style="">【中央电视台】新闻直播间：智能电网机器 </font></a>
+                    </li>
+
+                    <li>
+                        <i>09/17</i>
+                        <a  title="【中央电视台】新闻直播间：云技术应用 机器人具备自主学习能力" target="_blank" > <font style="">【中央电视台】新闻直播间：云技术应用 </font></a>
+                    </li>
+
+                    <li>
+                        <i>09/17</i>
+                        <a title="【中央电视台】新闻直播间：8省联合举行输电线路防山火观摩演练" target="_blank" > <font style="">【中央电视台】新闻直播间：8省联合</font></a>
+                    </li>
+
+                    <li>
+                        <i>09/14</i>
+                        <a title="《人民日报》：与时间竞速，点亮“雷神山”（一线抗疫群英谱）" target="_blank"> <font style="">《人民日报》：与时间竞速，点亮“雷</font></a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="newsbox ">
+                <div>
+                    <h4>图片视频</h4>
+                    <h6>更多>></h6>
+                </div>
+                <ul >
+                    <a class="newspic" target="_blank" ><img src="img/new01.jpg" ></a>
+                    <li>
+                        <i>09/18</i>
+                        <a  title="《人民日报海外版》：无人机多机协同 自主巡检" target="_blank"> <font style="">《人民日报海外版》：无人机多机</font></a>
+                    </li>
+
+                    <li>
+                        <i>09/17</i>
+                        <a title="【中央电视台】新闻直播间：智能电网机器人上岗 独立进行带电作业" target="_blank" > <font style="">【中央电视台】新闻直播间</font></a>
+                    </li>
+
+                    <li>
+                        <i>09/17</i>
+                        <a  title="【中央电视台】新闻直播间：云技术应用 机器人具备自主学习能力" target="_blank" > <font style="">【中央电视台】新闻直播间：云技术应用</font></a>
+                    </li>
+
+                    <li>
+                        <i>09/17</i>
+                        <a title="【中央电视台】新闻直播间：8省联合举行输电线路防山火观摩演练" target="_blank" > <font style="">【中央电视台】新闻直播间：8省联合举</font></a>
+                    </li>
+
+                    <li>
+                        <i>09/14</i>
+                        <a title="《人民日报》：与时间竞速，点亮“雷神山”（一线抗疫群英谱）" target="_blank"> <font style="">《人民日报》：与时间竞速，点亮</font></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+<div class="footer">
+    <div class="footdiv w">
+        <ul class="footnav">
+            <li>
+                <b>
+                    <a target="_blank" href="/html/sgcc_main/col2017011131/column_2017011131_1.shtml">关于我们</a>
+                </b>
+                <a target="_blank" href="/html/sgcc_main/col2017011304/column_2017011304_1.shtml">公司介绍</a>
+                <a target="_blank" href="/html/sgcc_main/col2017011822/column_2017011822_1.shtml">公司领导</a>
+                <a target="_blank" href="/html/sgcc_main/col2017012228/column_2017012228_1.shtml">外部董事</a>
+                <a target="_blank" href="/html/sgcc_main/col2017012538/column_2017012538_1.shtml">组织结构</a>
+                <a target="_blank" href="/html/sgcc_main/col2017012843/column_2017012843_1.shtml">企业荣誉</a>
+                <a target="_blank" href="/html/sgcc_main/col2017013007/column_2017013007_1.shtml">企业文化</a>
+                <a target="_blank" href="/html/sgcc_main/col2017013178/column_2017013178_1.shtml">信息公开</a>
+
+            </li>
+            <li>
+                <b>
+                    <a target="_blank" href="/html/sgcc_main/col2017021152/column_2017021152_1.shtml">新闻中心</a>
+                </b>
+                <a target="_blank" href="/html/sgcc_main/col2017021449/column_2017021449_1.shtml">要闻</a>
+                <a target="_blank" href="/html/sgcc_main/col2017021554/column_2017021554_1.shtml">综合新闻</a>
+                <a target="_blank" href="/html/sgcc_main/col2017021766/column_2017021766_1.shtml">一线风采</a>
+                <a target="_blank" href="/html/sgcc_main/col2017021879/column_2017021879_1.shtml">媒体聚焦</a>
+                <a target="_blank" href="/html/sgcc_main/col2017082059/column_2017082059_1.shtml">国资动态</a>
+
+            </li>
+            <li>
+                <b>
+                    <a target="_blank" href="/html/sgcc_main/col2017031128/column_2017031128_1.shtml">社会责任</a>
+                </b>
+                <a target="_blank" href="/html/sgcc_main/col2017031221/column_2017031221_1.shtml">社会责任</a>
+                <a target="_blank" href="/html/sgcc_main/col2017031425/column_2017031425_1.shtml">公益事业</a>
+                <a target="_blank" href="/html/sgcc_main/col2017031432/column_2017031432_1.shtml">电网法治</a>
+                <a target="_blank" href="/html/sgcc_main/col2017031501/column_2017031501_1.shtml">电力科普</a>
+                <a target="_blank" href="/html/sgcc_main/col2018032120/column_2018032120_1.shtml">营商环境</a>
+
+            </li>
+            <li>
+                <b>
+                    <a target="_blank" href="/html/sgcc_main/col2017041154/column_2017041154_1.shtml">业务领域</a>
+                </b>
+                <a target="_blank" href="/html/sgcc_main/col2017041204/column_2017041204_1.shtml">电网业务</a>
+                <a target="_blank" href="/html/sgcc_main/col2017041325/column_2017041325_1.shtml">一带一路</a>
+                <a target="_blank" href="/html/sgcc_main/col2017041543/column_2017041543_1.shtml">产业</a>
+                <a target="_blank" href="/html/sgcc_main/col2017041661/column_2017041661_1.shtml">金融</a>
+
+            </li>
+            <li>
+                <b>
+                    <a target="_blank" href="/html/sgcc_main/col2017051135/column_2017051135_1.shtml">科技创新</a>
+                </b>
+                <a target="_blank" href="/html/sgcc_main/col2017051457/column_2017051457_1.shtml">创新体系</a>
+                <a target="_blank" href="/html/sgcc_main/col2017051540/column_2017051540_1.shtml">实验资源</a>
+                <a target="_blank" href="/html/sgcc_main/col2017051615/column_2017051615_1.shtml">科研人才</a>
+                <a target="_blank" href="/html/sgcc_main/col2017051744/column_2017051744_1.shtml">科技奖励</a>
+                <a target="_blank" href="/html/sgcc_main/col2017051802/column_2017051802_1.shtml">专利工作</a>
+                <a target="_blank" href="/html/sgcc_main/col2017051942/column_2017051942_1.shtml">标准工作</a>
+
+            </li>
+            <li>
+                <b>
+                    <a target="_blank" href="/html/sgcc_main/col2017061121/column_2017061121_1.shtml">党的建设</a>
+                </b>
+                <a target="_blank" href="/html/sgcc_main/col2018080901/column_2018080901_1.shtml">学懂弄通做实</a>
+                <a target="_blank" href="/html/sgcc_main/col2017061314/column_2017061314_1.shtml">旗帜领航</a>
+                <a target="_blank" href="/html/sgcc_main/col2017061435/column_2017061435_1.shtml">党徽闪光</a>
+                <a target="_blank" href="http://wsdx.sgcc.com.cn">网上党校</a>
+
+            </li>
+            <li>
+                <b>
+                    <a target="_blank" href="/html/sgcc_main/col2017071109/column_2017071109_1.shtml">在线服务</a>
+                </b>
+
+                <a target="_blank" href="http://www.95598.cn/person/index.shtml">客户服务</a>
+
+                <a target="_blank" href="https://www.95598pay.com/">电e宝</a>
+
+                <a target="_blank" href="http://www.echargenet.com/">e充电</a>
+
+                <a target="_blank" href="http://www.esgcc.com.cn/">国网商城</a>
+
+                <a target="_blank" href="http://zhaopin.sgcc.com.cn/">人才招聘</a>
+
+                <a target="_blank" href="http://ecp.sgcc.com.cn/">电子采购</a>
+
+                <a target="_blank" href="/html/sgcc_main/col2017071109/hfjd_202001151720.shtml">行风监督</a>
+
+            </li>
+        </ul>
+        <div class="mediaCenter">
+            <ul>
+                <li class="mc_gf">
+                    <b>公司媒体</b>
+                    <a target="_blank" href="http://www.weibo.com/sgcc" class="fl">
+                        <img src="img/wxqrcode.png" width="78">
+                    </a>
+                    <a href="/sites/sgcc_main/#here" target="_blank" class="fr">
+                        <img src="img/wxqrcode.png" width="78">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright"><p style="TEXT-ALIGN: center"><img src="img/wxqrcode.png" data_ue_src="/html/files/2017-11/26/20171126222323153572430.png"></p><p style="TEXT-ALIGN: center">国家电网有限公司&nbsp;版权所有&nbsp;©&nbsp;2003-2020<br>中共国家电网有限公司党组宣传部（<span style="TEXT-ALIGN: center">对外联络部</span>）主办&nbsp;|&nbsp;国家电网有限公司信息通信分公司制作维护<br>地址：北京市西城区西长安街86号&nbsp;邮编：100031&nbsp;京ICP备17072407<span style="TEXT-ALIGN: center">号</span>-1</p></div>
+</div>
+<script>
+    $(function() {
+        $(window).scroll(function() {
+            //获取垂直滚动的距离
+            var scrollTop = $(document).scrollTop();
+            if (scrollTop >= 680) {
+                $("#NavTop").css({"top":0,"position":"fixed"});
+            }else {
+                $("#NavTop").css({"top":680,"position":"absolute"});
+            }
+        });
+        $("nav>div").hover(function () {
+            //
+            $(this).addClass('hover');
+            $(this).css({"background":"#ffffff","color":"#000"});
+            $(this).children('div').show();
+            $(this).children('div').css({"width":window.outerWidth-217,"top":$('#BigCarousel').offset().top});
+            $(this).children('div').css({"height":$('#BigCarousel').offsetHeight});
+        },function () {
+            $(this).removeClass('hover');
+            $(this).css({"background":"none","color":"#000000"});
+            $(this).children('div').hide();
+        });
+        $('a').hover(function () {
+            $(this).css({"text-decoration":"none"})
+        })
+        // background: url(../images/navbg2.png);
+    });
+
+</script>
 </body>
 </html>
